@@ -1,0 +1,33 @@
+extends layout
+
+block heady
+  meta(property='routineName' content=routineName)
+
+block content
+
+  h1#routineName #{routineName}
+  //- routine_task_list
+  <script src="/javascripts/libs/font_awesome.js"/></script>
+  div(class="btn-group" role="group" aria-label="Basic example")
+    button(id="startButton" type="button" class="btn btn-primary border rounded-pill mr-1") Start
+    button(id="resetButton" type="button" class="btn btn-primary border rounded-pill mr-1") Reset
+    <button id="addMinuteButton" type="button" class="btn btn-primary border rounded-pill mr-1">+2m</button>
+  div(id="countdownDiv")
+    <h1 id="countdownLabel" class="display-2 w-100"></h1>
+
+  ul(class="list-group" id="tasksList")
+
+  <div class="form-row my-2 align-items-center">
+      <div class="col-auto"> 
+        <input class="form-control mr-1" type="text" id="taskName" placeholder="Enter task">
+      </div>
+      <div class="col-auto"> 
+        <input class="form-control mr-1" type="number" id="taskDuration" placeholder="Enter Duration">
+      </div>
+      <div class="col-auto"> 
+        <button type="button" id ="submitButton" class="btn btn-primary">Enter</button>
+      </div>
+  </div>
+  <script src="/javascripts/libs/Sortable.min.js"></script>
+  script(src="/javascripts/dist/routine.js")
+  

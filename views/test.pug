@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  title=title
+  <button id="authorize_button" style="display: none;">Authorize</button>
+  <button id="signout_button" style="display: none;">Sign Out</button>
+
+  <pre id="content" style="white-space: pre-wrap;"></pre>
+
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script defer src="/javascripts/test.js"></script>

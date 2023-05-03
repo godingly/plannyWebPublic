@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+  h1 Project: #{project.name}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Lists
+
+    ul
+      each list in project_lists
+        li
+          a(href=list.url) #{list.name}
+      else
+        li project #{project.name} has no lists.

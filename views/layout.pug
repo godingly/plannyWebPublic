@@ -1,0 +1,53 @@
+doctype html
+html(lang='en')
+  head
+    title=title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")    
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(property="NODE_ENV" content=env.NODE_ENV)
+    if env.NODE_ENV=='development'
+      meta(property="debug")
+      script(src='http://localhost:35729/livereload.js?snipver=1')
+    block heady
+  body
+    div(class='container-fluid')
+      div(class='row')
+        div(class='col-sm-2')
+          block sidebar
+            ul(class='sidebar-nav')
+              li
+                a(href='/') Home
+              li
+                a(href='/projects') All Projects
+              li
+                a(href='/lists') All Lists
+              li
+                a(href='/tasks') All Tasks
+              li
+                a(href='/routine/morning') Morning routine
+              li
+                hr
+              li
+                a(href='/project/create') Create new project
+              li
+                a(href='/list/create') Create new list
+              li
+                a(href='/task/create') Create new task
+              li
+                hr
+              li
+                a(href='/test') test 
+              li
+                a(href='/calendar') calendar
+              li
+                a(href='/auth/logout') Logout
+
+
+        <script src="/javascripts/libs/jquery-3.6.0.min.js"></script>
+        <script src="/javascripts/libs/bootstrap.bundle.min.js"></script>
+        div(class='col-sm-10')
+          block content
+    
